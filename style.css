@@ -1,0 +1,168 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #000000;
+    color: #FFFFFF;
+    font-family: monospace;
+    text-align: center;
+    font-size: 15px;
+}
+
+h1,h2{
+    color: #00FF4A;
+    font-family: monospace;
+}
+
+section {
+    margin-top: -23%;
+}
+
+section img {
+    width: 40%;
+    text-align: center;
+}
+
+nav {
+    color: #FFFFFF;
+    padding: 11px;
+    background-color: #000000;
+    font-size: 16px;
+    cursor: default;
+}
+
+a {
+    color: #00FF4A;
+    text-decoration: none;
+    transition: 0s;
+}
+
+a:hover {
+    color: #FF0000;
+    transition: 0.4s;
+}
+
+footer {
+    text-align: center;
+    background: rgb(0, 255, 57);
+    background: linear-gradient(95deg, rgba(0, 150, 50, 1) 0%, rgba(0, 0, 0, 1) 100%);
+    padding: 1%;
+    color: #FFFFFF;
+}
+
+footer h2 {
+    color: #FFFFFF;
+}
+
+main {
+    background-color: #090909;
+    color: #FF7A00;
+    padding: 11px;
+}
+
+img {
+    border-radius: 2px;
+    border: 1px solid #848484;
+}
+
+strong {
+    color: #FF7A00;
+}
+
+i {
+    color: #FF7A00;
+}
+
+article img {
+    width: 60%
+    height: auto;
+}
+
+.img_footer img{
+    transition: 0s;
+    border: none;
+    width: 50px;
+}
+
+.img_footer img:hover{
+    transition: 0.3s;
+    box-shadow: 0 0 2px 1px #FF7A00;
+}
+
+#myImg {
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+#myImg:hover {opacity: 0.7;}
+
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
+}
+
+/* Modal Content (image) */
+.modal-content {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+}
+
+#caption {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+    text-align: center;
+    color: #ccc;
+    padding: 10px 0;
+    height: 150px;
+}
+
+.modal-content, #caption {  
+    animation-name: zoom;
+    animation-duration: 0.6s;
+}
+
+@keyframes zoom {
+    from {transform: scale(0.1)} 
+    to {transform: scale(1)}
+}
+
+.close {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.close:hover,
+.close:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+@media only screen and (max-width: 700px){
+    .modal-content {
+        width: 100%;
+    }
+}
