@@ -122,7 +122,7 @@ def lgplv2():
 	MessageBox.showinfo("GNU LESSER GENERAL PUBLIC LICENSE Version 2.1" , "GNU LESSER GENERAL PUBLIC LICENSE\nVersion 2.1, February 1999\nCopyright (C) 1991, 1999 Free Software Foundation, Inc.\n51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA\nEveryone is permitted to copy and distribute verbatim copies\nof this license document, but changing it is not allowed.\n[This is the first released version of the Lesser GPL.  It also counts\nas the successor of the GNU Library Public License, version 2, hence\nthe version number 2.1].")
 
 def pagina_web():
-	os.system("firefox Pagina_Web/index.html")
+	os.system("firefox index.html")
 	#os.system("firefox-developer-edition index.html") Si tienes el navegador firefox-developer-edition quitale el comentario (#)
 	#os.system("chrome index.html") Si tienes el navegador chrome quitale el comentario (#)
 	#os.system("brave index.html") Si tienes el navegador brave quitale el comentario (#)
