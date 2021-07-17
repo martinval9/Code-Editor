@@ -1,6 +1,8 @@
 # Code-Editor
 Editor de codigo para programar :)
 
+![Preview Image](https://github.com/martinval9/Code-Editor/blob/main/img.png)
+
 ## Instalacion
 
 Paso 1:
