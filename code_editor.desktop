@@ -1,0 +1,9 @@
+[Desktop Entry]
+Name=Code Editor[D]
+Comment=Editor de Código para programar
+Icon=/home/martin/code_editor/programming.png
+Exec=python3 /home/martin/code_editor/code_editor.pyw
+Categories=System Tools; #se puede omitir esta linea
+Terminal=false #true si es de terminal
+Type=Application
+
