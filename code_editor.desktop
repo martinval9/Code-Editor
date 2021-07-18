@@ -1,8 +1,8 @@
 [Desktop Entry]
-Name=Code Editor[D]
+Name=Code Editor
 Comment=Editor de Código para programar
-Icon=/home/martin/code_editor/programming.png
-Exec=python3 /home/martin/code_editor/code_editor.pyw
+Icon=/home/username/Code-Editor/programming.png
+Exec=python3 /home/username/Code-Editor/code_editor.pyw
 Categories=System Tools; #se puede omitir esta linea
 Terminal=false #true si es de terminal
 Type=Application
