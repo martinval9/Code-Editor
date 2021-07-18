@@ -6,40 +6,6 @@ from io import open
 import os
 
 #---BACKEND---
-
-os.system("clear")
-
-class run_in_terminal():
-	descripcion = "Si encuentras algun bug en el programa,por favor REPORTALO en GitHub"
-	usuario = "martinval9"
-
-print(Fore.CYAN + "[?] " + Fore.RESET + run_in_terminal.descripcion , Fore.CYAN + run_in_terminal.usuario)
-
-while True:
-	print(Fore.RED + "\n[!]" + Fore.RESET + " Es recomendable instalar las dependencias.\n")
-	dependencias = input(Fore.CYAN + "¿" + Fore.RESET + "Instalar dependencias" + Fore.CYAN + "? [s/n] = " + Fore.RESET)
-
-	if dependencias == "s":
-		print("\nInstalar con" + Fore.CYAN + "...")
-		opciones = ["\n1:" + Fore.RESET + " apt" + Fore.CYAN + " (Para distribuciones basadas en Debian).\n","\n2: " + Fore.RESET + "pacman" + Fore.CYAN + " (Para distribuciones basadas en Arch).\n" , "\n3: " + Fore.RESET + "pkg" + Fore.CYAN + " (Para BSD).\n" , "\n4: " + Fore.RESET +"Salir.\n"]
-
-		print(opciones[0] , opciones[1] , opciones[2] , opciones[3])
-
-		opcion = int(input("Elige una opcion" + Fore.CYAN + " = " + Fore.RESET))
-
-		if opcion == 1:
-			os.system("sudo apt install kitty")
-
-		if opcion == 2:
-			os.system("sudo pacman -S kitty")
-
-		if opcion == 3:
-			os.system("su")
-			os.system("pkg install kitty")
-
-	if dependencias == "n":
-		break
-
 #---FUNCIONES PARA INTERACTUAR CON LOS ARCHIVOS---
 
 ruta = ""
@@ -122,10 +88,10 @@ def lgplv2():
 	MessageBox.showinfo("GNU LESSER GENERAL PUBLIC LICENSE Version 2.1" , "GNU LESSER GENERAL PUBLIC LICENSE\nVersion 2.1, February 1999\nCopyright (C) 1991, 1999 Free Software Foundation, Inc.\n51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA\nEveryone is permitted to copy and distribute verbatim copies\nof this license document, but changing it is not allowed.\n[This is the first released version of the Lesser GPL.  It also counts\nas the successor of the GNU Library Public License, version 2, hence\nthe version number 2.1].")
 
 def pagina_web():
-	os.system("firefox index.html")
+	#os.system("firefox Pagina_Web/index.html")
 	#os.system("firefox-developer-edition index.html") Si tienes el navegador firefox-developer-edition quitale el comentario (#)
 	#os.system("chrome index.html") Si tienes el navegador chrome quitale el comentario (#)
-	#os.system("brave index.html") Si tienes el navegador brave quitale el comentario (#)
+	os.system("kitty brave-beta file:///home/martin/code_editor/Pagina_Web/index.html") #Si tienes el navegador brave quitale el comentario (#)
 
 #---FUNCIONES DEL SUBMENU DE EJECUCION---
 
@@ -173,8 +139,7 @@ def abrir_en_chrome():
 	os.system("chrome " + ruta)
 
 def abrir_en_brave():
-	os.system("brave " + ruta)
-
+	os.system("brave-beta " + ruta)
 
 root = Tk()
 root.title("Programming Editor")
@@ -188,7 +153,7 @@ menubar = Menu(
 	activebackground = "#1E1E1E",
 	activeforeground = "#FF0000",
 	border = 0,
-	font = "sans 9")
+	font = "JetBrainsMonoMedium 9")
 
 filemenu = Menu(
 	menubar,
@@ -198,7 +163,7 @@ filemenu = Menu(
 	activebackground = "#1E1E1E",
 	activeforeground = "#FF0000",
 	border = 0,
-	font = "sans 9")
+	font = "JetBrainsMonoMedium 9")
 
 abrir_en = Menu(
 	menubar,
@@ -208,7 +173,7 @@ abrir_en = Menu(
 	activebackground = "#1E1E1E",
 	activeforeground = "#FF0000",
 	border = 0,
-	font = "sans 9")
+	font = "JetBrainsMonoMedium 9")
 
 ejecutar_en = Menu(
 	menubar,
@@ -218,17 +183,7 @@ ejecutar_en = Menu(
 	activebackground = "#1E1E1E",
 	activeforeground = "#FF0000",
 	border = 0,
-	font = "sans 9")
-
-plantilla = Menu(
-	menubar,
-	tearoff = 0,
-	bg = "#090909",
-	fg = "#FFFFFF",
-	activebackground = "#1E1E1E",
-	activeforeground = "#FF0000",
-	border = 0,
-	font = "sans 9")
+	font = "JetBrainsMonoMedium 9")
 
 ayuda = Menu(
 	menubar,
@@ -238,7 +193,7 @@ ayuda = Menu(
 	activebackground = "#1E1E1E",
 	activeforeground = "#FF0000",
 	border = 0,
-	font = "sans 9")
+	font = "JetBrainsMonoMedium 9")
 
 filemenu.add_command(label = "Nuevo" , command = nuevo)
 filemenu.add_command(label = "Abrir" , command = abrir)
@@ -273,7 +228,7 @@ ayuda.add_command(label = "Licencia LGPLv2.1" , command = lgplv2)
 
 Scrollbar(root=None)
 scrollbar = Scrollbar(root)
-scrollbar.pack(side=RIGHT, fill=Y)
+scrollbar.pack(side = RIGHT, fill = Y)
 
 texto = Text(root , yscrollcommand=scrollbar.set)
 
@@ -281,25 +236,26 @@ texto.config(bg = "#030303",
 	fg = "#00FF4A",
 	bd=0, padx=6,
 	pady=4,
-	font="sans 11",
+	font="JetBrainsMonoMedium 11",
 	insertbackground="#FF0000")
 
 texto.pack(fill = "both" , expand = 1)
 
-scrollbar.config(command=texto.yview , bg = "#386E77" , border = 0 , activebackground = "#090909")
+scrollbar.config(command=texto.yview , bg = "#444444" , border = 0 , activebackground = "#00ff4a")
 
 # Monitor inferior
 mensaje = StringVar()
 
-mensaje.set("Sientate,escribe algo de codigo y demuestra lo mejor que sabes hacer :) | Version 2.7")
-monitor = Label(root, textvar=mensaje, justify='left')
-monitor.pack(side="left")
+mensaje.set("Sientate,escribe algo de codigo y demuestra lo mejor que sabes hacer :) | Version 3.2")
+monitor = Label(root, textvar = mensaje, justify = 'left')
+monitor.pack(side = "left")
 
 monitor.config(
 	bg = "#00171B",
 	fg = "#fff",
-	font = "sans 9")
+	font = "JetBrainsMonoMedium 9")
 
-root.config(menu=menubar , bg = "#00171B")
+root.config(menu = menubar , bg = "#00171B")
 
+root.update()
 root.mainloop()
